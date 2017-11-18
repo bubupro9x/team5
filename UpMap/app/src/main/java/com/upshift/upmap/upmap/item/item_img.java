@@ -14,8 +14,5 @@ public class item_img {
     public void setUrl(String url) {
         this.url = url;
     }
-    item_img(){}
-    item_img(String _u){
-        url = _u;
-    }
+
 }

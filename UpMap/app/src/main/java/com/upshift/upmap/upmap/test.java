@@ -22,7 +22,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -203,11 +202,13 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
 //            l_cmt.add(i.getL_cmt().get(j).getName()+" : "+ i.getL_cmt().get(j).getCmt());
 //            j++;
 //        }
-//        j=0;
-//        for (item_maker_sieuthi i : l_m_sieuthi) {
-//            list_url_img.add(i.getImg().get(j).getUrl());
-//        }
 
+//        for (item_maker_sieuthi i : l_m_sieuthi) {
+//            for(int j = 0; j<i.getImg().size();j++) {
+//                list_url_img.add(i.getImg().get(j).getUrl());
+//            }
+//        }
+      //  Toast.makeText(test.this,l_m_sieuthi.get(0).getImg().get(0).getUrl(),Toast.LENGTH_SHORT).show();
 //        for (item_cmt z: l_cmt) {
 //            list_adpter_cmt.add(z.getName()+" : "+z.getCmt());
 //        }
@@ -224,10 +225,13 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
         this.map = googleMap;
         behavior.anchorMap(map);
         // Add a marker in Sydney and move the camera
-        for (item_maker_sieuthi l:l_m_sieuthi) {
-            map.addMarker(new MarkerOptions().position(new LatLng(l.getLat(),l.getLon())).title(l.getName())).showInfoWindow();
-            Toast.makeText(test.this,""+l.getLat(),Toast.LENGTH_SHORT).show();
-        }
+            for (item_maker_sieuthi l:l_m_sieuthi) {
+                map.addMarker(new MarkerOptions().position(new LatLng(l.getLat(), l.getLon())).title(l.getName())).showInfoWindow();
+            }
+//        LatLng l = new LatLng(l_m_sieuthi.get(0).getLat(),l_m_sieuthi.get(0).getLon());
+//        Toast.makeText(test.this,l.latitude+" - "+l.longitude,Toast.LENGTH_SHORT).show();
+//        map.addMarker(new MarkerOptions().position(l).title(l_m_sieuthi.get(0).getName())).showInfoWindow();
+     //       map.addMarker(new MarkerOptions().position(new LatLng(16.035132,108.229034))).showInfoWindow();
             map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
@@ -249,13 +253,19 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
                     name_l = (TextView)view_header.findViewById(R.id.name_location);
                     name_l.setText(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getName());
                     ImageButton chiduong = (ImageButton)view_content.findViewById(R.id.btnchiduong);
-
                     NonScrollListView lv = (NonScrollListView)view_content.findViewById(R.id.lv_cmt);
+                    ArrayList<String> temp = new ArrayList<String>();
+                    temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());
                     ArrayAdapter<String>adapter=new ArrayAdapter<String>
-                            (test.this, android.R.layout.simple_list_item_1,list_adpter_cmt );
+                            (test.this, android.R.layout.simple_list_item_1,temp );
                     lv.setAdapter(adapter);
                     listItem = (TwoWayView)view_content.findViewById(R.id.listview_img);
-                    ListViewAdapter mAdapter = new ListViewAdapter(test.this, list_url_img);
+//                    ArrayList<String> temp = new ArrayList<String>();
+//                    temp.add(l_m_sieuthi.get(0).getImg().get(1).getUrl());
+////                    temp.add(l_m_sieuthi.get(0).getImg().get(0).getUrl());
+//                    Toast.makeText(test.this,""+temp.size(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(test.this,temp.get(0).toString(),Toast.LENGTH_SHORT).show();
+                    ListViewAdapter mAdapter = new ListViewAdapter(test.this,temp );
                     listItem.setAdapter(mAdapter);
                     streetViewPanoramaFragment.getStreetViewPanoramaAsync(
                             new OnStreetViewPanoramaReadyCallback() {

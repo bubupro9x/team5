@@ -11,49 +11,12 @@ public class item_maker_sieuthi {
     private double lon;
     private String name;
     private String add;
-    private ArrayList<item_img> img = new ArrayList<>();
+    private String url ;
     private Integer service;
     private String Content;
     private String phone;
     private ArrayList<item_cmt> l_cmt = new ArrayList<>();
 
-    public item_maker_sieuthi(){}
-    public item_maker_sieuthi(double _lat, double _lon, String _name, String _add){
-        lat = _lat;
-        lon=_lon;
-        name=_name;
-        add=_add;
-    }
-    public item_maker_sieuthi(double _lat, double _lon, String _name, String _add, ArrayList<item_cmt> _l){
-        lat = _lat;
-        lon=_lon;
-        name=_name;
-        add=_add;
-        l_cmt = _l;
-    }
-    public item_maker_sieuthi(String _c, Double _lat, ArrayList<item_img> _img,  ArrayList<item_cmt> _l, Double _lon,
-                              String _n, String _p, Integer _se  ){
-        img = _img;
-        lat = _lat;
-        lon=_lon;
-        name=_n;
-        l_cmt = _l;
-        Content = _c;
-        phone = _p;
-        service = _se;
-    }
-    public item_maker_sieuthi(String _c, Double _lat, ArrayList<item_img> _img,  ArrayList<item_cmt> _l, Double _lon,
-                              String _n, String _p, Integer _se, String _add  ){
-        setImg(_img);
-        lat = _lat;
-        lon=_lon;
-        name=_n;
-        l_cmt = _l;
-        Content = _c;
-        add= _add;
-        phone = _p;
-        service = _se;
-    }
 
 
     public double getLat() {
@@ -120,11 +83,12 @@ public class item_maker_sieuthi {
         this.l_cmt = l_cmt;
     }
 
-    public ArrayList<item_img> getImg() {
-        return img;
+
+    public String getUrl() {
+        return url;
     }
 
-    public void setImg(ArrayList<item_img> img) {
-        this.img = img;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

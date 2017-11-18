@@ -15,7 +15,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -80,17 +79,27 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
 
     private void loaddata() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef_sieuthi = database.getReference("maker").child("sieuthi");
+        final DatabaseReference myRef_sieuthi = database.getReference("maker").child("sieuthi");
         myRef_sieuthi.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 l_m_sieuthi.clear();
                             for (DataSnapshot post : dataSnapshot.getChildren()) {
                                 item_maker_sieuthi l = post.getValue(item_maker_sieuthi.class);
+//                                item_maker_sieuthi temp = new item_maker_sieuthi(l.getLat(),l.getLon(),l.getName(),l.getContent(),l.getL_cmt(),l.getImg(),l.getPhone(),l.getService());
                                 l_m_sieuthi.add(l);
+//                                Toast.makeText(HorizontalNtbActivity.this,""+post., Toast.LENGTH_SHORT).show();
                             }
+//                l_m_sieuthi.get(0).getImg().get(0).setUrl("hello");
+//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HorizontalNtbActivity.this,""+dataSnapshot.child("1").child("img").child("1").getChildrenCount(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HorizontalNtbActivity.this,""+dataSnapshot.child("1").getChildrenCount(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.size(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(HorizontalNtbActivity.this,l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
+//                myRef_sieuthi.child("img").setValue("Hello, World!");
 //                item_maker_sieuthi l_m_sieuthi = dataSnapshot.getValue(item_maker_sieuthi.class);
-                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).getL_cmt().size(),Toast.LENGTH_LONG).show();
+//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).ge,Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -100,6 +109,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
 
 
         });
+
     }
 
 
@@ -142,6 +152,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
 
                             Intent i = new Intent(HorizontalNtbActivity.this,test.class);
                             startActivity(i);
+                            finish();
 
                         }
                     });
