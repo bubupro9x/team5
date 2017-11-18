@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:background="@android:color/white">
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:paddingTop="8dp"-->
+        <!--android:paddingStart="16dp"-->
+        <!--android:paddingEnd="16dp"-->
+        <!--android:paddingBottom="8dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/bottom_sheet_title"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Title dummy"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="19sp"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/text_dummy1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Text dummy 1234 1234"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="12sp"-->
+                <!--android:layout_marginTop="5dp"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Text dummy qwer asdf zxcv"-->
+                <!--android:textColor="@android:color/white"-->
+                <!--android:textSize="12sp"-->
+                <!--android:layout_marginTop="5dp"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="5 min"-->
+            <!--android:textColor="@android:color/white"-->
+            <!--android:textSize="14sp"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:paddingTop="8dp"/>-->
+
+    <!--</RelativeLayout>-->
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingBottom="12dp"
+  >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_gravity="center"
+                android:id="@+id/btnchiduong"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_chiduong"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <TextView
+                android:textSize="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TUYẾN ĐƯỜNG"
+                android:textColor="#3f6cfd"
+                android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/establecimiento_layout_favoritos_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="20dp"
+
+            android:layout_marginStart="20dp">
+
+            <ImageButton
+                android:id="@+id/btnphone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_phone_b"/>
+
+            <TextView
+                android:textColor="#3f6cfd"
+                android:textSize="12dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GỌI"
+               />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <ImageButton
+
+                android:layout_gravity="center"
+                android:id="@+id/establecimiento_share_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_web_a"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:textColor="#3f6cfd"
+                android:textSize="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TRANG WEB"
+                android:layout_alignParentBottom="true"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#f4f4f4"
+            />
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/i1"
+                android:background="@drawable/ic_phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/i1"
+                android:text="Cầu thang máy cho người đị bộ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#f4f4f4"
+            />
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/i2"
+                android:background="@drawable/ic_phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/i2"
+                android:text="Cầu thang máy cho người đị bộ"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#f4f4f4"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đánh giá"
+            android:layout_gravity="center_vertical"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_light"/>
+        <com.upshift.upmap.upmap.NonScrollListView
+            android:id="@+id/lv_cmt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></com.upshift.upmap.upmap.NonScrollListView>
+
+        <TextView
+            android:gravity="right"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xem các bình luận khác"
+            android:layout_gravity="center_vertical"
+            android:textStyle="italic"
+            android:textAllCaps="false"
+            android:textColor="@android:color/holo_blue_light"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:textColorHint="#bcbcbc"
+                android:textSize="15dp"
+                android:hint="Bình luận tại đây"
+                android:layout_marginRight="30dp"
+                android:id="@+id/et_cmt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <ImageButton
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/icn_4"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <org.lucasr.twowayview.TwoWayView
+        android:id="@+id/listview_img"
+        android:divider="@android:color/transparent"
+
+        android:layout_gravity="center_vertical"
+        style="@style/TwoWayView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="620dp"-->
+        <!--android:background="@drawable/background"-->
+        <!--android:layout_marginTop="40dp">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:text="Your remaining content here"-->
+            <!--android:textColor="@android:color/white" />-->
+
+    <!--</FrameLayout>-->
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomBottomSheetBehavior">
+        <attr name="anchorPoint" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="GoogleMapsBottomSheetBehavior_Layout">
+        <attr name="behavior_peekHeight"/>
+        <attr name="behavior_hideable" format="boolean" />
+        <attr name="behavior_skipCollapsed" format="boolean" />
+        <attr name="behavior_anchorHeight" format="dimension">
+            <enum name="auto" value="-1"/>
+        </attr>
+        <attr name="behavior_anchorColor" format="color" />
+        <attr name="behavior_collapsedColor" format="color" />
+        <attr name="behavior_anchorTextColor" format="color" />
+        <attr name="behavior_collapsedTextColor" format="color" />
+        <attr name="behavior_header_layout" format="reference" />
+        <attr name="behavior_content_layout" format="reference" />
+        <attr name="behavior_parallax_layout" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="MaterialTextField">
+        <attr name="mtf_cardCollapsedHeight" format="dimension"/>
+        <attr name="mtf_labelColor" format="color"/>
+        <attr name="mtf_image" format="reference"/>
+        <attr name="mtf_hasFocus" format="boolean"/>
+        <attr name="mtf_animationDuration" format="integer"/>
+        <attr name="mtf_openKeyboardOnFocus" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CircleIndicator">
+        <attr name="ci_radius" format="dimension"/>
+        <attr name="ci_margin" format="dimension"/>
+        <attr name="ci_background" format="color|integer"/>
+        <attr name="ci_selected_background" format="color|integer"/>
+        <attr name="ci_gravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="ci_mode">
+            <enum name="inside" value="0"/>
+            <enum name="outside" value="1"/>
+            <enum name="solo" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="NavigationTabBar">
+        <attr name="ntb_titled" format="boolean"/>
+        <attr name="ntb_badged" format="boolean"/>
+        <attr name="ntb_scaled" format="boolean"/>
+        <attr name="ntb_tinted" format="boolean"/>
+        <attr name="ntb_swiped" format="boolean"/>
+        <attr name="ntb_badge_use_typeface" format="boolean"/>
+
+        <attr name="ntb_title_size" format="dimension"/>
+        <attr name="ntb_title_mode" format="enum">
+            <enum name="all" value="0"/>
+            <enum name="active" value="1"/>
+        </attr>
+
+        <attr name="ntb_badge_size" format="dimension"/>
+        <attr name="ntb_badge_position" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="ntb_badge_gravity" format="enum">
+            <enum name="top" value="0"/>
+            <enum name="bottom" value="1"/>
+        </attr>
+        <attr name="ntb_badge_bg_color" format="color"/>
+        <attr name="ntb_badge_title_color" format="color"/>
+
+        <attr name="ntb_typeface" format="string"/>
+        <attr name="ntb_corners_radius" format="dimension"/>
+        <attr name="ntb_icon_size_fraction" format="float"/>
+        <attr name="ntb_animation_duration" format="integer"/>
+
+        <attr name="ntb_inactive_color" format="color"/>
+        <attr name="ntb_active_color" format="color"/>
+        <attr name="ntb_bg_color" format="color"/>
+
+        <attr name="ntb_preview_colors" format="reference"/>
+    </declare-styleable>
+</resources>

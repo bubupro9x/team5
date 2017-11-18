@@ -1,0 +1,19 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=F1:93:68:DE:E7:86:C5:21:29:CA:03:73:81:2A:01:96:80:C1:39:9C%3Bcom.upshift.upmap.upmap
+
+    You can also add your credentials to an existing key, using this line:
+    F1:93:68:DE:E7:86:C5:21:29:CA:03:73:81:2A:01:96:80:C1:39:9C;com.upshift.upmap.upmap
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" translatable="false" templateMergeStrategy="preserve">AIzaSyC_6kkgpN995SA4E8WhnHK5KFlaPoBbmag</string>
+</resources>

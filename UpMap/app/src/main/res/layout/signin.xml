@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    >
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logoum1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/people"
+                    android:background="@drawable/people"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+            <EditText
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:textColorHint="#ffffff"
+                android:hint="Full name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/editText" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mail"
+                android:background="@drawable/mail"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <EditText
+                android:layout_toRightOf="@id/mail"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:textColorHint="#ffffff"
+                android:hint="Mail"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/mobile"
+                android:background="@drawable/phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <EditText
+                android:layout_toRightOf="@id/mobile"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:textColorHint="#ffffff"
+                android:hint="Phone"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/key"
+                android:background="@drawable/key"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <EditText
+                android:inputType="textPassword"
+                android:layout_toRightOf="@id/key"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:textColorHint="#ffffff"
+                android:hint="Password"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/rekey"
+                android:background="@drawable/keyboard"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            <EditText
+                android:inputType="textPassword"
+                android:layout_toRightOf="@id/rekey"
+                android:textColor="#ffffff"
+                android:backgroundTint="#ffffff"
+                android:textColorHint="#ffffff"
+                android:hint="Confirm Password"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:lines="1"
+                android:maxLines="2"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:text="Sign In"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="#ffffff"
+                android:text="--------"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
+

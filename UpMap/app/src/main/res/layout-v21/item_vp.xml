@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:weightSum="4">
+
+
+
+
+
+    <TextView
+        android:id="@+id/btnsieuthi"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Siêu thị"
+        android:textColor="#9b92b3"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:id="@+id/btnvuichoi"
+        android:gravity="center"
+        android:text="Khu vui chơi"
+        android:textColor="#9b92b3"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:id="@+id/btnnhahang"
+        android:gravity="center"
+        android:text="Nhà hàng, Khách sạn"
+        android:textColor="#9b92b3"
+        android:textStyle="bold"/>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:id="@+id/btncoquan"
+        android:gravity="center"
+        android:text="Cơ quan nhà nước"
+        android:textColor="#9b92b3"
+        android:textStyle="bold"/>
+
+</LinearLayout>
