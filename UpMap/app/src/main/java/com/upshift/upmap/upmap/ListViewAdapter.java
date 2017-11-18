@@ -83,7 +83,7 @@ public class ListViewAdapter implements ListAdapter {
 
         ViewHolder holder = (ViewHolder) rowView.getTag();
 
-        Picasso.with(rowView.getContext()).load(listData.get(position)).centerCrop().resize(150,150).into(holder.img);
+        Picasso.with(rowView.getContext()).load(listData.get(position)).centerCrop().resize(300,300).into(holder.img);
 //        holder.textItem.setText(listData.get(position));
 
 

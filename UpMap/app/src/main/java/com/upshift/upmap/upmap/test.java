@@ -22,6 +22,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -254,19 +255,32 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
                     name_l.setText(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getName());
                     ImageButton chiduong = (ImageButton)view_content.findViewById(R.id.btnchiduong);
                     NonScrollListView lv = (NonScrollListView)view_content.findViewById(R.id.lv_cmt);
-                    ArrayList<String> temp = new ArrayList<String>();
-                    temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());
-                    ArrayAdapter<String>adapter=new ArrayAdapter<String>
-                            (test.this, android.R.layout.simple_list_item_1,temp );
-                    lv.setAdapter(adapter);
+
+//
+//                    ArrayAdapter<String>adapter=new ArrayAdapter<String>
+//                            (test.this, android.R.layout.simple_list_item_1,temp );
+//                    lv.setAdapter(adapter);
+//
+//                    Toast.makeText(test.this,l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl(),Toast.LENGTH_SHORT).show();
+                    String[] temp = null;
+                    temp = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl().split("--");
+                    ArrayList<String> itemList = new ArrayList<String>();
+                    for (String item : temp) {
+                        itemList.add(item);
+                    }
+                    Toast.makeText(test.this,itemList.get(0).toString(),Toast.LENGTH_SHORT).show();
+
+                    //     temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());
+//                    temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());
                     listItem = (TwoWayView)view_content.findViewById(R.id.listview_img);
 //                    ArrayList<String> temp = new ArrayList<String>();
 //                    temp.add(l_m_sieuthi.get(0).getImg().get(1).getUrl());
 ////                    temp.add(l_m_sieuthi.get(0).getImg().get(0).getUrl());
 //                    Toast.makeText(test.this,""+temp.size(), Toast.LENGTH_SHORT).show();
 //                    Toast.makeText(test.this,temp.get(0).toString(),Toast.LENGTH_SHORT).show();
-                    ListViewAdapter mAdapter = new ListViewAdapter(test.this,temp );
+                    ListViewAdapter mAdapter = new ListViewAdapter(test.this,itemList);
                     listItem.setAdapter(mAdapter);
+
                     streetViewPanoramaFragment.getStreetViewPanoramaAsync(
                             new OnStreetViewPanoramaReadyCallback() {
                                 @Override

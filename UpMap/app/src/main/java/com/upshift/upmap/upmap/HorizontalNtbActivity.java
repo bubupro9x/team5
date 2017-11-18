@@ -14,7 +14,9 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -152,7 +154,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
 
                             Intent i = new Intent(HorizontalNtbActivity.this,test.class);
                             startActivity(i);
-                            finish();
+                         //   finish();
 
                         }
                     });
@@ -191,6 +193,44 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
                     return view;
                 }
                 if (position == 1) {
+                    ListView lv = (ListView) view1.findViewById(R.id.listview_sort);
+                    Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.size(),Toast.LENGTH_SHORT).show();
+                    lv.setAdapter(new ListAdapter(getApplicationContext(), R.layout.item_sot, l_m_sieuthi));
+//                    final ListView finalLv = lv;
+//                    final EditText search = (EditText)view1.findViewById(R.id.sort_search);
+//                    search.addTextChangedListener(new TextWatcher() {
+//                        @Override
+//                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onTextChanged(CharSequence s, int start, int before, int count) {
+//                            if (s.equals("")) {
+//
+//                            } else {
+//                                ArrayList<item_maker_sieuthi> temp = new ArrayList<>();
+//                                int textlength = search.getText().length();
+//                                temp.clear();
+//                                for (int i = 0; i < l_m_sieuthi.size(); i++) {
+//                                    if (textlength <= l_m_sieuthi.get(i).getName().length()) {
+//                                        if (search.getText().toString().equalsIgnoreCase(
+//                                                (String)
+//                                                        l_m_sieuthi.get(i).getName().subSequence(0,
+//                                                                textlength))) {
+//                                            temp.add(l_m_sieuthi.get(i));
+//                                        }
+//                                    }
+//                                }
+//                                finalLv.setAdapter(new ListAdapter(getApplicationContext(), R.layout.item_sot, temp));
+//                            }
+//                        }
+//
+//                        @Override
+//                        public void afterTextChanged(Editable s) {
+//
+//                        }
+//                    });
 
                     container.addView(view1);
                     return view1;
