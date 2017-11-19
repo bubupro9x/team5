@@ -5,7 +5,7 @@
               android:orientation="vertical"
               android:weightSum="4">
     <TextView
-        android:background="@drawable/store3"
+        android:background="@drawable/sieuthi"
         android:id="@+id/btnsieuthi"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,7 +16,7 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:background="@drawable/park2"
+        android:background="@drawable/khuvuichoi"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginEnd="10dp"
@@ -30,7 +30,7 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:background="@drawable/coffee"
+        android:background="@drawable/cafecopy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -45,14 +45,13 @@
         android:textStyle="bold"/>
 
     <TextView
-        android:background="@drawable/coquan"
+        android:background="@drawable/coquannhanuoc"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:id="@+id/btncoquan"
         android:gravity="center"
-
         android:textColor="#9b92b3"
         android:textStyle="bold"/>
 

@@ -283,12 +283,16 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
                     name_l.setText(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getName());
                     ImageButton chiduong = (ImageButton)view_content.findViewById(R.id.btnchiduong);
                     NonScrollListView lv = (NonScrollListView)view_content.findViewById(R.id.lv_cmt);
+                    ArrayList<String> list_cmt = new ArrayList<String>();
+                    list_cmt.add("Duy: Cần bổ sung thêm dịch vụ ở đây");
+                    list_cmt.add("Ngọc: Địa hổ trợ rất nhiều dịch vụ cho người khuyết tật");
+                    list_cmt.add("Lâm: Dịch vụ ở đây đang bổ sung");
+                    list_cmt.add("Minh: Chất lượng dịch vụ ở đây rất tốt");
+                    list_cmt.add("Trang: Cảm ơn ứng dụng đã cho tôi biết địa điểm này");
+                    ArrayAdapter<String>adapter=new ArrayAdapter<String>
+                            (test.this, android.R.layout.simple_list_item_1,list_cmt);
+                    lv.setAdapter(adapter);
 
-//
-//                    ArrayAdapter<String>adapter=new ArrayAdapter<String>
-//                            (test.this, android.R.layout.simple_list_item_1,temp );
-//                    lv.setAdapter(adapter);
-//
 //                    Toast.makeText(test.this,l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl(),Toast.LENGTH_SHORT).show();
                     String[] _temp = null;
                     _temp = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl().split("--");

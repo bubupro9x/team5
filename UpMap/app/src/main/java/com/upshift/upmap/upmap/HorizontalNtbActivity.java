@@ -121,35 +121,35 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
                         }
                     });
 
-                    TextView btnnhahang = (TextView)view.findViewById(R.id.btnnhahang);
-                    btnnhahang.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            key = "nhahang";
-                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
-                            startActivity(i);
-                        }
-                    });
-
-                    TextView btncoquan = (TextView)view.findViewById(R.id.btncoquan);
-                    btncoquan.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            key = "coquan";
-                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
-                            startActivity(i);
-                        }
-                    });
-
-                    TextView btnvuichoi = (TextView)view.findViewById(R.id.btnvuichoi);
-                    btnvuichoi.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            key = "khuvuichoi";
-                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
-                            startActivity(i);
-                        }
-                    });
+    //                    TextView btnnhahang = (TextView)view.findViewById(R.id.btnnhahang);
+    //                    btnnhahang.setOnClickListener(new View.OnClickListener() {
+    //                        @Override
+    //                        public void onClick(View v) {
+    //                            key = "nhahang";
+    //                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
+    //                            startActivity(i);
+    //                        }
+    //                    });
+    //
+    //                    TextView btncoquan = (TextView)view.findViewById(R.id.btncoquan);
+    //                    btncoquan.setOnClickListener(new View.OnClickListener() {
+    //                        @Override
+    //                        public void onClick(View v) {
+    //                            key = "coquan";
+    //                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
+    //                            startActivity(i);
+    //                        }
+    //                    });
+    //
+    //                    TextView btnvuichoi = (TextView)view.findViewById(R.id.btnvuichoi);
+    //                    btnvuichoi.setOnClickListener(new View.OnClickListener() {
+    //                        @Override
+    //                        public void onClick(View v) {
+    //                            key = "khuvuichoi";
+    //                            Intent i = new Intent(HorizontalNtbActivity.this,test.class);
+    //                            startActivity(i);
+    //                        }
+    //                    });
 
                     container.addView(view);
                     return view;
