@@ -22,7 +22,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -33,6 +32,7 @@ import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -44,6 +44,7 @@ import com.upshift.upmap.upmap.Modules.DirectionFinder;
 import com.upshift.upmap.upmap.Modules.DirectionFinderListener;
 import com.upshift.upmap.upmap.Modules.Route;
 import com.upshift.upmap.upmap.item.item_maker_sieuthi;
+import com.upshift.upmap.upmap.lv.ListAdapter_sv;
 import com.upshift.upmap.upmap.reline.GoogleMapsBottomSheetBehavior;
 
 import org.lucasr.twowayview.TwoWayView;
@@ -54,7 +55,7 @@ import java.util.List;
 
 import butterknife.ButterKnife;
 
-import static com.upshift.upmap.upmap.HorizontalNtbActivity.l_m_sieuthi;
+import static com.upshift.upmap.upmap.LogActivity.l_m_sieuthi;
 
 public class test extends FragmentActivity implements OnMapReadyCallback, OnStreetViewPanoramaReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, ActivityCompat.OnRequestPermissionsResultCallback,DirectionFinderListener,StreetViewPanorama.OnStreetViewPanoramaChangeListener {
 
@@ -191,9 +192,9 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
 
     private void add() {
 
-        Address locationAddress;
-        locationAddress=locationHelper.getAddress(16.034852, 108.229214);
-        String address = locationAddress.getAddressLine(0);
+//        Address locationAddress;
+//        locationAddress=locationHelper.getAddress(16.034852, 108.229214);
+//        String address = locationAddress.getAddressLine(0);
 
 //        for (item_maker_sieuthi i : l_m_sieuthi) {
 //            list_url_img.add(i.getImg());
@@ -227,8 +228,10 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
         behavior.anchorMap(map);
         // Add a marker in Sydney and move the camera
             for (item_maker_sieuthi l:l_m_sieuthi) {
-                map.addMarker(new MarkerOptions().position(new LatLng(l.getLat(), l.getLon())).title(l.getName())).showInfoWindow();
+                map.addMarker(new MarkerOptions().icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)).position(new LatLng(l.getLat(), l.getLon()))).showInfoWindow();
             }
+
+        map.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(16.070506,108.245646)));
 //        LatLng l = new LatLng(l_m_sieuthi.get(0).getLat(),l_m_sieuthi.get(0).getLon());
 //        Toast.makeText(test.this,l.latitude+" - "+l.longitude,Toast.LENGTH_SHORT).show();
 //        map.addMarker(new MarkerOptions().position(l).title(l_m_sieuthi.get(0).getName())).showInfoWindow();
@@ -236,7 +239,7 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
             map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
-                    final double lat = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getLat();
+                    final double lat =  l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getLat();
                     final double lon = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getLon();
                     behavior.setState(GoogleMapsBottomSheetBehavior.STATE_COLLAPSED);
                     behavior.setHideable(false);
@@ -249,6 +252,35 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
                     String state = locationAddress.getAdminArea();
                     String country = locationAddress.getCountryName();
                     String postalCode = locationAddress.getPostalCode();
+
+//                    ArrayList<Integer> list_sv = new ArrayList<Integer>();
+////                    Integer service = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getService();
+////                    String _ser = String.valueOf(service);
+////                    String[] __ser = _ser.split("");
+//                    for (String l:__ser
+//                         ) {
+//                        list_sv.add(Integer.parseInt(l));
+//                    }
+                    String[] temp = null;
+                    temp = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getService().split(",");
+                    ArrayList<String> list_sv = new ArrayList<String>();
+                    for (String item : temp) {
+                        list_sv.add(item);
+                    }
+//                    Toast.makeText(test.this,""+list_sv.size(),Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(test.this,""+temp.length,Toast.LENGTH_SHORT).show();
+//                    list_sv.add(2);
+//                    list_sv.add(2);
+//                    list_sv.add(3);
+                    NonScrollListView lv_sv = (NonScrollListView)view_content.findViewById(R.id.lv_sv) ;
+
+//                    for (item_maker_sieuthi l : l_m_sieuthi
+//                            ) {
+//                        list_sv.add(l.getService());
+//                    }
+                    ListAdapter_sv l_sv = new ListAdapter_sv(test.this,R.layout.item_list_sv,list_sv);
+                    lv_sv.setAdapter(l_sv);
+
                     add_l = (TextView)view_header.findViewById(R.id.add_location);
                     add_l.setText(address);
                     name_l = (TextView)view_header.findViewById(R.id.name_location);
@@ -262,13 +294,13 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
 //                    lv.setAdapter(adapter);
 //
 //                    Toast.makeText(test.this,l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl(),Toast.LENGTH_SHORT).show();
-                    String[] temp = null;
-                    temp = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl().split("--");
+                    String[] _temp = null;
+                    _temp = l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl().split("--");
                     ArrayList<String> itemList = new ArrayList<String>();
-                    for (String item : temp) {
+                    for (String item : _temp) {
                         itemList.add(item);
                     }
-                    Toast.makeText(test.this,itemList.get(0).toString(),Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(test.this,itemList.get(0).toString(),Toast.LENGTH_SHORT).show();
 
                     //     temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());
 //                    temp.add(l_m_sieuthi.get(Integer.parseInt(marker.getId().substring(1))).getUrl());

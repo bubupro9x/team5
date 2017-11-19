@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     >
-
-</RelativeLayout>
+    <ImageView
+        android:src="@drawable/upshift"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColorHint="#44b7ff"
+        android:hint="UPSHIFT – “dự án vươn lên” là một chương trình phi lợi nhuận tìm kiếm và ươm mầm các doanh nghiệp xã hội. UPSHIFT là chương trình dành riêng cho các bạn trẻ từ 14-24t, đặc biệt là các bạn trẻ bên lề xã hội có cơ hội THỬ hiện thực hóa các ý tưởng về dự án khởi nghiệp xã hội. "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

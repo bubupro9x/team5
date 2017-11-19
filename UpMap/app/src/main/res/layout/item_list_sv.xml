@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="100dp"
+
+    >
+    <ImageView
+        android:src="@drawable/sv1"
+        android:id="@+id/icon_lv_sv"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+
+    <TextView
+
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:text="Cầu thang máy cho người đị bộ"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/lv_content_sv"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/icon_lv_sv" />
+</RelativeLayout>

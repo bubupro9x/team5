@@ -9,55 +9,55 @@
     android:background="@android:color/white">
 
     <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:paddingTop="8dp"-->
-        <!--android:paddingStart="16dp"-->
-        <!--android:paddingEnd="16dp"-->
-        <!--android:paddingBottom="8dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="100dp"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--android:paddingTop="8dp"-->
+    <!--android:paddingStart="16dp"-->
+    <!--android:paddingEnd="16dp"-->
+    <!--android:paddingBottom="8dp">-->
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:orientation="vertical">-->
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
 
-            <!--<TextView-->
-                <!--android:id="@+id/bottom_sheet_title"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Title dummy"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="19sp"/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/bottom_sheet_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Title dummy"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="19sp"/>-->
 
-            <!--<TextView-->
-                <!--android:id="@+id/text_dummy1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Text dummy 1234 1234"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="12sp"-->
-                <!--android:layout_marginTop="5dp"/>-->
+    <!--<TextView-->
+    <!--android:id="@+id/text_dummy1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Text dummy 1234 1234"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="12sp"-->
+    <!--android:layout_marginTop="5dp"/>-->
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="Text dummy qwer asdf zxcv"-->
-                <!--android:textColor="@android:color/white"-->
-                <!--android:textSize="12sp"-->
-                <!--android:layout_marginTop="5dp"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="Text dummy qwer asdf zxcv"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="12sp"-->
+    <!--android:layout_marginTop="5dp"/>-->
 
-        <!--</LinearLayout>-->
+    <!--</LinearLayout>-->
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="5 min"-->
-            <!--android:textColor="@android:color/white"-->
-            <!--android:textSize="14sp"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:paddingTop="8dp"/>-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="5 min"-->
+    <!--android:textColor="@android:color/white"-->
+    <!--android:textSize="14sp"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:paddingTop="8dp"/>-->
 
     <!--</RelativeLayout>-->
 
@@ -69,7 +69,7 @@
         android:orientation="horizontal"
         android:gravity="center_horizontal"
         android:paddingBottom="12dp"
-  >
+        >
 
         <LinearLayout
             android:orientation="vertical"
@@ -117,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="GỌI"
-               />
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -154,56 +154,39 @@
             android:layout_height="1dip"
             android:background="#f4f4f4"
             />
-        <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+        <com.upshift.upmap.upmap.NonScrollListView
+            android:id="@+id/lv_sv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/i1"
-                android:background="@drawable/ic_phone"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+            android:layout_height="match_parent">
 
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/i1"
-                android:text="Cầu thang máy cho người đị bộ"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView3"
-                android:layout_centerVertical="true"
-                />
-
-        </RelativeLayout>
+        </com.upshift.upmap.upmap.NonScrollListView>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dip"
             android:background="#f4f4f4"
             />
-        <RelativeLayout
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/i2"
-                android:background="@drawable/ic_phone"
-                android:layout_width="30dp"
-                android:layout_height="30dp" />
+        <!--<RelativeLayout-->
+            <!--android:layout_marginTop="5dp"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<ImageView-->
+                <!--android:id="@+id/i2"-->
+                <!--android:background="@drawable/ic_phone"-->
+                <!--android:layout_width="30dp"-->
+                <!--android:layout_height="30dp" />-->
 
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/i2"
-                android:text="Cầu thang máy cho người đị bộ"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                />
+            <!--<TextView-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_toRightOf="@+id/i2"-->
+                <!--android:text="Cầu thang máy cho người đị bộ"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--/>-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
         <View
             android:layout_width="match_parent"
@@ -273,17 +256,17 @@
         android:layout_height="150dp" />
 
     <!--<FrameLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="620dp"-->
-        <!--android:background="@drawable/background"-->
-        <!--android:layout_marginTop="40dp">-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="620dp"-->
+    <!--android:background="@drawable/background"-->
+    <!--android:layout_marginTop="40dp">-->
 
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:text="Your remaining content here"-->
-            <!--android:textColor="@android:color/white" />-->
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center"-->
+    <!--android:text="Your remaining content here"-->
+    <!--android:textColor="@android:color/white" />-->
 
     <!--</FrameLayout>-->
 </LinearLayout>

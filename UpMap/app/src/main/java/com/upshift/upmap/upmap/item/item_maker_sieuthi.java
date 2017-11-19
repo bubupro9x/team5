@@ -12,7 +12,7 @@ public class item_maker_sieuthi {
     private String name;
     private String add;
     private String url ;
-    private Integer service;
+    private String service;
     private String Content;
     private String phone;
     private ArrayList<item_cmt> l_cmt = new ArrayList<>();
@@ -51,11 +51,11 @@ public class item_maker_sieuthi {
         this.add = add;
     }
 
-    public Integer getService() {
+    public String getService() {
         return service;
     }
 
-    public void setService(Integer service) {
+    public void setService(String service) {
         this.service = service;
     }
 

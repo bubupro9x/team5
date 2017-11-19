@@ -1,6 +1,7 @@
 package com.upshift.upmap.upmap;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
@@ -10,23 +11,17 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.upshift.upmap.upmap.LocationUtil.LocationHelper;
-import com.upshift.upmap.upmap.item.item_maker_sieuthi;
 import com.upshift.upmap.upmap.ntb.NavigationTabBar;
 
 import java.util.ArrayList;
@@ -42,7 +37,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
     LocationHelper locationHelper;
     private Location mLastLocation;
 
-    public static ArrayList<item_maker_sieuthi> l_m_sieuthi = new ArrayList<>();
+
 
 
     @Override
@@ -56,7 +51,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
         locationHelper=new LocationHelper(this);
         locationHelper.checkpermission();
         locationHelper.buildGoogleApiClient();
-        loaddata();
+
         ButterKnife.bind(this);
    //     FirebaseDatabase database = FirebaseDatabase.getInstance();
  //       final DatabaseReference fb = database.getReference("chat").child(user_name).child("check");
@@ -79,40 +74,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
         initUI();
     }
 
-    private void loaddata() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        final DatabaseReference myRef_sieuthi = database.getReference("maker").child("sieuthi");
-        myRef_sieuthi.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                l_m_sieuthi.clear();
-                            for (DataSnapshot post : dataSnapshot.getChildren()) {
-                                item_maker_sieuthi l = post.getValue(item_maker_sieuthi.class);
-//                                item_maker_sieuthi temp = new item_maker_sieuthi(l.getLat(),l.getLon(),l.getName(),l.getContent(),l.getL_cmt(),l.getImg(),l.getPhone(),l.getService());
-                                l_m_sieuthi.add(l);
-//                                Toast.makeText(HorizontalNtbActivity.this,""+post., Toast.LENGTH_SHORT).show();
-                            }
-//                l_m_sieuthi.get(0).getImg().get(0).setUrl("hello");
-//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(HorizontalNtbActivity.this,""+dataSnapshot.child("1").child("img").child("1").getChildrenCount(), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(HorizontalNtbActivity.this,""+dataSnapshot.child("1").getChildrenCount(), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.size(), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
-//                Toast.makeText(HorizontalNtbActivity.this,l_m_sieuthi.get(0).getImg().get(0).getUrl(), Toast.LENGTH_SHORT).show();
-//                myRef_sieuthi.child("img").setValue("Hello, World!");
-//                item_maker_sieuthi l_m_sieuthi = dataSnapshot.getValue(item_maker_sieuthi.class);
-//                Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.get(0).ge,Toast.LENGTH_LONG).show();
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-
-
-        });
-
-    }
 
 
     private void initUI() {
@@ -154,7 +116,7 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
 
                             Intent i = new Intent(HorizontalNtbActivity.this,test.class);
                             startActivity(i);
-                         //   finish();
+                       //     finish();
 
                         }
                     });
@@ -193,45 +155,19 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
                     return view;
                 }
                 if (position == 1) {
-                    ListView lv = (ListView) view1.findViewById(R.id.listview_sort);
-                    Toast.makeText(HorizontalNtbActivity.this,""+l_m_sieuthi.size(),Toast.LENGTH_SHORT).show();
-                    lv.setAdapter(new ListAdapter(getApplicationContext(), R.layout.item_sot, l_m_sieuthi));
-//                    final ListView finalLv = lv;
-//                    final EditText search = (EditText)view1.findViewById(R.id.sort_search);
-//                    search.addTextChangedListener(new TextWatcher() {
-//                        @Override
-//                        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                            if (s.equals("")) {
-//
-//                            } else {
-//                                ArrayList<item_maker_sieuthi> temp = new ArrayList<>();
-//                                int textlength = search.getText().length();
-//                                temp.clear();
-//                                for (int i = 0; i < l_m_sieuthi.size(); i++) {
-//                                    if (textlength <= l_m_sieuthi.get(i).getName().length()) {
-//                                        if (search.getText().toString().equalsIgnoreCase(
-//                                                (String)
-//                                                        l_m_sieuthi.get(i).getName().subSequence(0,
-//                                                                textlength))) {
-//                                            temp.add(l_m_sieuthi.get(i));
-//                                        }
-//                                    }
-//                                }
-//                                finalLv.setAdapter(new ListAdapter(getApplicationContext(), R.layout.item_sot, temp));
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void afterTextChanged(Editable s) {
-//
-//                        }
-//                    });
+                    Button up = (Button)view1.findViewById(R.id.btn_update);
+                    up.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+//                progressDialog = ProgressDialog.show(LogActivity.this, "Please wait.",
+//                        "Loading data..!", true);
+                            showAlertDialog();
 
+//                progressDialog.dismiss();
+                           // startActivity( new Intent(LogActivity.this, HorizontalNtbActivity.class));
+                            //  finish();
+                        }
+                    });
                     container.addView(view1);
                     return view1;
                 }
@@ -339,7 +275,27 @@ public class HorizontalNtbActivity extends Activity implements GoogleApiClient.C
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
 
     }
+    public void showAlertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("UMAP Message");
+        builder.setMessage("Do you want to update?");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Ứ chịu", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            //    Toast.makeText(this, "Không thoát được", Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+//                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
 
+    }
 
     /**
      * SimsimiAPI extends AsyncTask because we can process background work
