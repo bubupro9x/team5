@@ -135,11 +135,19 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String name = s.toString();
-                for (item_maker_sieuthi l: l_m_sieuthi) {
-                    if (name.equalsIgnoreCase(l.getName())){
-                        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(l.getLat(),l.getLon()), 16));
-                        auto_search.clearFocus();
-                        break;
+                ArrayList<item_maker_sieuthi> temp = new ArrayList<>();
+                temp.clear();
+                int textlength = name.length();
+
+                for (int i = 0; i < l_m_sieuthi.size(); i++) {
+                    if (textlength <= l_m_sieuthi.get(i).getName().length()) {
+                        if (name.equalsIgnoreCase(
+                                (String)
+                                        l_m_sieuthi.get(i).getName().subSequence(0,
+                                                textlength))) {
+                            map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(l_m_sieuthi.get(i).getLat(),l_m_sieuthi.get(i).getLon()), 16));
+                            auto_search.clearFocus();
+                        }
                     }
                 }
             }
