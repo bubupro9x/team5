@@ -131,18 +131,14 @@ public class test extends FragmentActivity implements OnMapReadyCallback, OnStre
         auto_search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
                 String name = s.toString();
-                for (item_maker_sieuthi l: list_maker) {
+                for (item_maker_sieuthi l: l_m_sieuthi) {
                     if (name.equalsIgnoreCase(l.getName())){
                         map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(l.getLat(),l.getLon()), 16));
                         auto_search.clearFocus();
-
                         break;
                     }
                 }

@@ -4,23 +4,19 @@
               android:layout_height="match_parent"
               android:orientation="vertical"
               android:weightSum="4">
-
-
-
-
-
     <TextView
+        android:background="@drawable/store3"
         android:id="@+id/btnsieuthi"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Siêu thị"
         android:textColor="#9b92b3"
         android:textStyle="bold"/>
 
     <TextView
+        android:background="@drawable/park2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginEnd="10dp"
@@ -30,11 +26,11 @@
         android:layout_weight="1"
         android:id="@+id/btnvuichoi"
         android:gravity="center"
-        android:text="Khu vui chơi"
         android:textColor="#9b92b3"
         android:textStyle="bold"/>
 
     <TextView
+        android:background="@drawable/coffee"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -45,19 +41,18 @@
         android:layout_weight="1"
         android:id="@+id/btnnhahang"
         android:gravity="center"
-        android:text="Nhà hàng, Khách sạn"
         android:textColor="#9b92b3"
         android:textStyle="bold"/>
 
     <TextView
-
+        android:background="@drawable/coquan"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
         android:id="@+id/btncoquan"
         android:gravity="center"
-        android:text="Cơ quan nhà nước"
+
         android:textColor="#9b92b3"
         android:textStyle="bold"/>
 
